@@ -26,6 +26,8 @@
 		    	<th scope="col">created at</th>
 		    	<th scope="col">updated at</th>
 		    	<th scope="col">note</th>
+		    	<th></th>
+		    	<th></th>
 		    </tr>
 		</thead>
 		<tbody>			
@@ -44,8 +46,8 @@
 
 				    		
 			    		
-				    		<td><form action="{{url('/', [$note->id])}}" method="POST">
-				    			{{method_field('DELETE')}}
+				    		<td><form action="{{url('/notes', [$note])}}" method="POST">
+				    			@method('DELETE')
 				    			@csrf
 				    			<button type="submit" class="btn btn-primary">Удалить</button>
 				    		</form></td>
@@ -67,8 +69,9 @@
 	        </button>
 	      </div>
 	      <div class="modal-body">
-	        <form action="{{url('update_notes')}}" method="POST">
-	        			@csrf
+	        <form action="{{url('/notes', [$note])}}" method="POST">
+	        		@method('PUT')
+	        		@csrf
 				<div class="form-group">
 					<input class="d-none" type="text" id="id" name="update_id"/>
 					<textarea class="form-control" rows="5" id="note" name="update_note"></textarea>

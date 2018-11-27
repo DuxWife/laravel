@@ -10,10 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'NotesController@show');
-Route::post('/','NotesController@add');
-Route::delete('/{id}','NotesController@delete');
-Route::post('update_notes','NotesController@patch');
-
-
+// Route::get('/', 'NotesController@show');
+// Route::post('/','NotesController@add');
+// Route::delete('/{id}','NotesController@delete');
+// Route::post('update_notes','NotesController@patch');
+Route::resource('/notes', 'NotesController');
+Route::resource('/', 'WelcomController');
 Auth::routes();

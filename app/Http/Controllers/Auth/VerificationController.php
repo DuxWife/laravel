@@ -25,7 +25,7 @@ class VerificationController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/notes';
 
     /**
      * Create a new controller instance.
@@ -41,6 +41,6 @@ class VerificationController extends Controller
 
     protected function redirectTo()
 {
-    return '/';
+    return '/notes';
 }
 }
