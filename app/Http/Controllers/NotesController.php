@@ -20,7 +20,7 @@ class NotesController extends Controller
     public function index()
     {
         $notes = Auth::user()->notes;
-        return view('notes', ['notes' => $notes]);
+        return $notes;
     }
 
     /**
