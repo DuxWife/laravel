@@ -69,4 +69,13 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
     }
+
+    protected function redirectTo()
+    {
+    if (! $request->expectsJson()) {
+            return '/notes';
+        }
+    }
+
+    
 }

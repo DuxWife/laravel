@@ -3,7 +3,7 @@
 	<script>
 		function myFunction(id, note) {
 			$("#id").val(id);
-		    $("#note").val(note);
+		  $("#note").val(note);
 		}
 	</script>
 @endsection

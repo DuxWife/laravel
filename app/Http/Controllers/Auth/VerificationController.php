@@ -40,7 +40,9 @@ class VerificationController extends Controller
     }
 
     protected function redirectTo()
-{
-    return '/notes';
-}
+    {
+        if (! $request->expectsJson()) {
+            return '/notes';
+        }
+    }
 }

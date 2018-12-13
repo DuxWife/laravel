@@ -45,7 +45,6 @@ class NotesController extends Controller
         $note->note = $request->note;
         $note->user()->associate(Auth::user());
         $note->save();
-        return redirect('/notes');
     }
 
     /**
@@ -82,7 +81,6 @@ class NotesController extends Controller
         $note->updated_at = now();
         $note->note = $request->update_note;
         $note->update();
-        return redirect('/');
     }
 
     /**
@@ -94,6 +92,5 @@ class NotesController extends Controller
     public function destroy(Note $note)
     {
         $note->delete();
-        return redirect('/notes');
     }
 }
